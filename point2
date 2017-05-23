@@ -40,9 +40,9 @@
 			- syntethic label 
 				- synthesize initial labels with the ground truth
 				- evaluate segmentation accuracy by varying the amount of "incorrect" initial labels: Using the groundtruth labels, we split an input image to : 
-					- foreground region
-					- background region
-					- erroneous regions 
+					- foreground (white)
+					- background (black)
+					- erroneous (grey) 
 
 
 	- performance 
