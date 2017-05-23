@@ -1,4 +1,6 @@
 - intro
+	- ccurrence probability captures a global distribution of all color values within each label
+	- while co-occurrence one encodes a local distribution of color values around the label.
 - related work
 	- method :
 		- interactive img s --> graph based
@@ -22,7 +24,27 @@
 		- discrete opimization
 	
 - experiment
-	- detail - 
+	- detail 
+		- hardware : intel core i7 3,40 GHz
+		- dataset : 
+			- Grabcut dataset with 
+			- 50 images from Berkeley dataset for binary segmentation, 
+			- subset of 50 images from the Graz dataset for multi-label segmentation
+		- window 7x7 
+		- quantitive eval --> dice score (result vs groundtruth)
+		
+		- inital labeling 
+			- manual label 
+				- a user roughly draw initial labels to the Grabcut dataset and the Graz dataset 
+				- color : red ,blue n green
+			- syntethic label 
+				- synthesize initial labels with the ground truth
+				- evaluate segmentation accuracy by varying the amount of "incorrect" initial labels: Using the groundtruth labels, we split an input image to : 
+					- foreground region
+					- background region
+					- erroneous regions 
+
+
 	- performance 
 		- effectiveness of OCP
 		- experiments (varying label density)
@@ -39,3 +61,10 @@
 	- can be applied to solve other semi-supervised computer vision and graphics problems that need to handle inaccurate initial supervision : 
 		- interactive video segmentation
 
+
+
+
+
+- Since most of the existing methods use the color distribution of initial labels, they cannot handle the case where all the initial labels have similar color distributions (e.g., Fig. 12 (a))
+- In addition, our method penalizes inaccurate labels using the OCP of color values for each initial label. 
+- Thus, when a small number of correct labels are assigned in distinct regions (e.g., left-hand side in Fig. 12 (b)), the OCP considers these labels as outliers, and suppresses them. These limitations can be addressed by employingother features as a description of initial labels, e.g., texture and object prior.
