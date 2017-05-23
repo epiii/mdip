@@ -1,0 +1,41 @@
+- intro
+- related work
+	- method :
+		- interactive img s --> graph based
+			- graphcut (gc)
+			- random walker (rw)
+			- randowm walker with restart (rwr)
+			- laplacian coordinate (lc)
+		- robust img s --> 
+	- disadv. 
+		- properties of label (density n location)
+		- similar color of back n fore ground
+
+-proposed approach 
+	- background 
+	- model
+		- structure-aware fidelity
+		- nonlocal regularization
+	- solver
+	- comparison other methods
+		- continuous optimization
+		- discrete opimization
+	
+- experiment
+	- detail - 
+	- performance 
+		- effectiveness of OCP
+		- experiments (varying label density)
+		- experiments (varying neightborhood size)
+		- computational time 
+	- Comparison with existing methods via "synthetic" labels
+	- Comparison with existing methods via "manual" labels
+	- limitations
+- conclusion
+	- the model is robust inaaccurate initial labels
+	- outperform binary & multilabel segemntation
+- future work
+	- deep learning--> It enables using highly reliable object prior for interactive image segmentation 
+	- can be applied to solve other semi-supervised computer vision and graphics problems that need to handle inaccurate initial supervision : 
+		- interactive video segmentation
+
